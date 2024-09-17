@@ -20,7 +20,7 @@ class NRPProvider(BaseProvider, OpenAI):
         name="NRP_API_KEY", keyword_param="openai_api_key",
     )
     # openai_api_key = getenv("NRP_API_KEY", '')
-    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api')
+    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api/v1/')
     openai_organization = "NRP"
     persona = Persona(name="NRP", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -51,7 +51,7 @@ class ChatNRPProvider(BaseProvider, ChatOpenAI):
     auth_strategy =  EnvAuthStrategy(
         name="NRP_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api')
+    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api/v1/')
     openai_organization = "NRP"
     persona = Persona(name="NRP", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -82,6 +82,6 @@ class NRPEmbeddingsProvider(BaseEmbeddingsProvider, OpenAIEmbeddings):
     auth_strategy =  EnvAuthStrategy(
         name="NRP_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api')
+    openai_api_base = getenv("NRP_API_BASE", 'https://nrp-openwebui.nrp-nautilus.io/api/v1/')
     openai_organization = "NRP"
     persona = Persona(name="NRP", avatar_route="api/ai/static/jupyternaut.svg")
