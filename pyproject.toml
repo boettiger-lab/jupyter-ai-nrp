@@ -3,7 +3,7 @@ requires = ["hatchling>=1.4.0", "jupyterlab~=4.0", "hatch-nodejs-version"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupyter_ai_provider"
+name = "jupyter_ai_nrp"
 requires-python = ">=3.8"
 classifiers = [
     "Framework :: Jupyter",
