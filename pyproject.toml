@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.4.0", "jupyterlab~=4.0", "hatch-nodejs-version"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_ai_provider"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+version = "0.1.0"
+description = "A Jupyter AI extension for NRP."
+authors = [
+    { name = "Dmitry Mishin", email = "dmishin@ucsd.edu" },
+]
+dependencies = ["jupyter_ai"]
+
+[project.optional-dependencies]
+test = ["coverage", "pytest", "pytest-asyncio", "pytest-cov"]
+
+[project.entry-points."jupyter_ai.model_providers"]
+nrp = "jupyter_ai_nrp.provider:NRPProvider"
+nrp-chat = "jupyter_ai_nrp.provider:ChatNRPProvider"
+
+[project.entry-points."jupyter_ai.embeddings_model_providers"]
+nrp-embeddings = "jupyter_ai_nrp.provider:NRPEmbeddingsProvider"
+
+[tool.check-wheel-contents]
+ignore = ["W002"]
+
+[tool.hatch.build.hooks.version]
+path = "jupyter_ai_nrp/_version.py"
