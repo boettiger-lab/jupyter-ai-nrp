@@ -72,7 +72,7 @@ class NRPEmbeddingsProvider(BaseEmbeddingsProvider, OpenAIEmbeddings):
     id = "nrp-embeddings"
     name = "NRP"
     models = [
-        "llama3",
+        "embed-mistral",
     ]
     help = "Click here for more details on [NRP](https://docs.nrp.ai/userdocs/ai/llm-managed/)"
     model_id_key = "model"
